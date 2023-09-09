@@ -1,7 +1,4 @@
-package com.github.supercoding.respository;
-
-import com.github.supercoding.web.dto.Item;
-import com.github.supercoding.web.dto.ItemBody;
+package com.github.supercoding.respository.items;
 
 import java.util.List;
 
@@ -15,4 +12,6 @@ public interface ElectronicStoreItemRepository {
     void deleteItem(int parseInt);
 
     ItemEntity findItemById(Integer idInt);
+
+    void updateItemStock(Integer itemId, Integer stock);
 }
