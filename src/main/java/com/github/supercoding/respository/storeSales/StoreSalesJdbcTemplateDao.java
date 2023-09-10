@@ -1,6 +1,7 @@
 package com.github.supercoding.respository.storeSales;
 
 import org.apache.catalina.Store;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ public class StoreSalesJdbcTemplateDao implements StoreSalesRepository {
                     rs.getInt("amount")
             )
     ));
-    public StoreSalesJdbcTemplateDao(JdbcTemplate jdbcTemplate) {
+    public StoreSalesJdbcTemplateDao(@Qualifier("jdbcTemplate1") JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
