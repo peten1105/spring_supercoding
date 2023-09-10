@@ -1,4 +1,4 @@
-package com.github.supercoding.respository.storeSales;
+package com.github.supercoding.repository.storeSales;
 
 
 import org.springframework.stereotype.Repository;

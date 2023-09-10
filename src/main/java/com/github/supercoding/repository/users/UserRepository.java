@@ -1,4 +1,4 @@
-package com.github.supercoding.respository.users;
+package com.github.supercoding.repository.users;
 
 import java.util.Optional;
 

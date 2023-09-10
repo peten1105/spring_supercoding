@@ -1,6 +1,5 @@
-package com.github.supercoding.respository.storeSales;
+package com.github.supercoding.repository.storeSales;
 
-import org.apache.catalina.Store;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;

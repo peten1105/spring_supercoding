@@ -1,4 +1,4 @@
-package com.github.supercoding.respository.reservations;
+package com.github.supercoding.repository.reservations;
 
 public interface ReservationRepository {
     boolean saveReservation(Reservation reservation);

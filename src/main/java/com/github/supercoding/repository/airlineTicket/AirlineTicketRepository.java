@@ -1,4 +1,4 @@
-package com.github.supercoding.respository.airlineTicket;
+package com.github.supercoding.repository.airlineTicket;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.github.supercoding.respository.passenger;
+package com.github.supercoding.repository.passenger;
 
 import java.util.Optional;
 

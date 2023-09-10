@@ -1,4 +1,4 @@
-package com.github.supercoding.respository.users;
+package com.github.supercoding.repository.users;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;

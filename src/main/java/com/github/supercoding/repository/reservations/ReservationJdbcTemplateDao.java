@@ -1,4 +1,4 @@
-package com.github.supercoding.respository.reservations;
+package com.github.supercoding.repository.reservations;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
