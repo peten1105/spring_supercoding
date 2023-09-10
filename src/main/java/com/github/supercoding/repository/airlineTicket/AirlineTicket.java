@@ -19,6 +19,7 @@ import org.hibernate.Hibernate;
 @ToString
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "airline_ticket")
 public class AirlineTicket {
     @Id @Column(name = "ticket_id")
@@ -43,18 +44,5 @@ public class AirlineTicket {
 
     @OneToMany(mappedBy = "airlineTicket")
     private List<Flight> flightList;
-
-
-    @Builder
-    public AirlineTicket(Integer ticketId, String ticketType, String departureLocation, String arrivalLocation, Date departureAt, Date returnAt, Double tax, Double totalPrice) {
-        this.ticketId = ticketId;
-        this.ticketType = ticketType;
-        this.departureLocation = departureLocation;
-        this.arrivalLocation = arrivalLocation;
-        this.departureAt = departureAt.toLocalDate().atStartOfDay();
-        this.returnAt = returnAt.toLocalDate().atStartOfDay();
-        this.tax = tax;
-        this.totalPrice = totalPrice;
-    }
 
 }
