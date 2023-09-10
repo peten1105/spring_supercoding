@@ -4,6 +4,7 @@ import com.github.supercoding.service.ElectronicStoreItemService;
 import com.github.supercoding.web.dto.BuyOrder;
 import com.github.supercoding.web.dto.Item;
 import com.github.supercoding.web.dto.ItemBody;
+import com.github.supercoding.web.dto.StoreInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -108,5 +109,11 @@ public class ElectronicStoreController {
     @GetMapping("/items-types-page")
     public Page<Item> findItemsPagination(@RequestParam("type") List<String> types, Pageable pageable){
         return electronicStoreItemService.findAllWithPageable(types, pageable);
+    }
+
+    @ApiOperation("전체 stores 정보 검색")
+    @GetMapping("/stores")
+    public List<StoreInfo> findAllStoreInfo(){
+        return electronicStoreItemService.findAllStoreInfo();
     }
 }
