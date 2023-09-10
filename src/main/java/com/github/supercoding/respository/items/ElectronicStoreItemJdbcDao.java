@@ -10,17 +10,18 @@ import java.util.List;
 @Repository
 public class ElectronicStoreItemJdbcDao implements ElectronicStoreItemRepository{
 
-    private JdbcTemplate jdbcTemplate;
-    static RowMapper<ItemEntity> itemEntityRowMapper = (((rs, rowNum) -> new ItemEntity(
-            rs.getInt("id"),
-            rs.getNString("name"),
-            rs.getNString("type"),
-            rs.getInt("price"),
-            rs.getInt("store_id"),
-            rs.getInt("stock"),
-            rs.getNString("cpu"),
-            rs.getNString("capacity")
-    )));
+    private final JdbcTemplate jdbcTemplate;
+    static RowMapper<ItemEntity> itemEntityRowMapper = (((rs, rowNum) ->
+            new ItemEntity.ItemEntityBuilder()
+                    .id(rs.getInt("id"))
+                    .name(rs.getNString("name"))
+                    .type(rs.getNString("type"))
+                    .storeId(rs.getInt("store_id"))
+                    .stock(rs.getInt("stock"))
+                    .cpu(rs.getNString("cpu"))
+                    .price(rs.getInt("price"))
+                    .capacity(rs.getNString("capacity"))
+                    .build()));
 
     public ElectronicStoreItemJdbcDao(@Qualifier("jdbcTemplate1") JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

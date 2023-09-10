@@ -5,19 +5,18 @@ import com.github.supercoding.web.dto.airline.ReservationRequest;
 import com.github.supercoding.web.dto.airline.ReservationResult;
 import com.github.supercoding.web.dto.airline.Ticket;
 import com.github.supercoding.web.dto.airline.TicketResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/v1/api/air-reservation")
+@RequiredArgsConstructor
 public class AirReservationController {
 
-    private AirReservationService airReservationService;
+    private final AirReservationService airReservationService;
 
-    public AirReservationController(AirReservationService airReservationService) {
-        this.airReservationService = airReservationService;
-    }
     @GetMapping("/tickets")
     public TicketResponse findAirLineTickets(@RequestParam("user-id")Integer userId,
                                              @RequestParam("airline-ticket-type") String ticketType){
